@@ -14,6 +14,8 @@ import { publicOrigin } from '@/lib/site-origin.server';
 import { HorizonsPreviewScripts } from './horizons-preview-scripts';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
+import { ScrollReveal } from '@/components/scroll-reveal';
+import { WhatsAppFloat } from '@/components/whatsapp-float';
 import { LOGO_URL, VERIFICATION } from '@/constants/site';
 
 export const links: Route.LinksFunction = () => [
@@ -79,7 +81,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-	return <><SiteHeader /><Outlet /><SiteFooter /></>;
+	return <><SiteHeader /><ScrollReveal /><Outlet /><SiteFooter /><WhatsAppFloat /></>;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

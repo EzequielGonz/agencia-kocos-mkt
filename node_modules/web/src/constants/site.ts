@@ -15,7 +15,7 @@ export const SITE_URL = '';
 // Completar estos datos cuando estén disponibles; nunca se muestran valores ficticios.
 export const CONTACT = {
   /** Solo números con código de país. Ej: '5491140000000'. Vacío → los botones llevan al formulario. */
-  whatsapp: '',
+  whatsapp: '5492235223906',
   email: '',
   instagram: '', // URL completa. Ej: 'https://www.instagram.com/kocosmarketing'
   facebook: '',

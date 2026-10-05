@@ -12,7 +12,6 @@ import { Portfolio } from '@/components/home/portfolio';
 import { Faq } from '@/components/home/faq';
 import { FinalCta } from '@/components/home/final-cta';
 import { Contact } from '@/components/home/contact';
-import { ScrollReveal } from '@/components/scroll-reveal';
 
 export function meta({ matches, location }: Route.MetaArgs) {
   const origin = siteOriginFrom(matches);
@@ -24,5 +23,5 @@ export function meta({ matches, location }: Route.MetaArgs) {
   });
 }
 export default function HomePage() {
-  return <main><ScrollReveal /><Hero /><Approach /><Services /><Plans /><Process /><Difference /><Portfolio /><Faq /><FinalCta /><Contact /></main>;
+  return <main><Hero /><Approach /><Services /><Plans /><Process /><Difference /><Portfolio /><Faq /><FinalCta /><Contact /></main>;
 }

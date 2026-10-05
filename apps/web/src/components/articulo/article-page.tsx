@@ -33,7 +33,7 @@ export function HubGroups({ groups }: { groups: HubGroup[] }) {
   return (
     <>
       {groups.map(group => (
-        <section className="doc-section doc-hub" id={slugify(group.title)} key={group.title}>
+        <section className="doc-section doc-hub reveal" id={slugify(group.title)} key={group.title}>
           <h2>{group.title}</h2>
           <LinkRows links={group.links} />
         </section>
@@ -71,7 +71,7 @@ export function ArticlePage({ data, children }: Props) {
             {children}
             {sections.map((section, index) => (
               <Fragment key={section.id}>
-                <section className="doc-section" id={section.id}>
+                <section className="doc-section reveal" id={section.id}>
                   <h2>{section.title}</h2>
                   <Blocks blocks={section.blocks} />
                 </section>
@@ -82,7 +82,7 @@ export function ArticlePage({ data, children }: Props) {
             {hub.length > 0 && <HubGroups groups={hub} />}
 
             {page.faqs && page.faqs.length > 0 && (
-              <section className="doc-section" id="preguntas-frecuentes">
+              <section className="doc-section reveal" id="preguntas-frecuentes">
                 <h2>Preguntas <em>frecuentes.</em></h2>
                 <div className="faq-list">
                   {page.faqs.map(faq => (
@@ -96,14 +96,14 @@ export function ArticlePage({ data, children }: Props) {
             )}
           </article>
 
-          <aside className="doc-aside" aria-label="En esta página">
+          <aside className="doc-aside reveal" aria-label="En esta página">
             {toc.length > 2 && (
               <nav className="doc-toc" aria-label="Índice">
                 <span className="section-kicker">/ EN ESTA PÁGINA</span>
                 <ol>{toc.map(item => <li key={item.id}><a href={`#${item.id}`}>{item.title}</a></li>)}</ol>
               </nav>
             )}
-            <div className="doc-aside-cta">
+            <div className="doc-aside-cta reveal">
               <p className="doc-aside-title">{CTA.sidebar.title}</p>
               <p>{CTA.sidebar.text}</p>
               <ContactButtons tone="light" whatsappMessage={whatsappMessage} origen={page.path} primaryLabel={CTA.mid.primary} whatsappLabel={CTA.mid.whatsapp} />
@@ -113,7 +113,7 @@ export function ArticlePage({ data, children }: Props) {
       </div>
 
       {related.length > 0 && (
-        <section className="doc-related section-pad">
+        <section className="doc-related section-pad reveal">
           <div className="container">
             <span className="section-kicker">/ SEGUÍ EXPLORANDO</span>
             <h2>También te puede <em>interesar.</em></h2>

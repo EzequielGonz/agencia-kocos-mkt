@@ -4,7 +4,7 @@ import { ContactButtons } from './contact-buttons';
 /** Banda final: misma estructura y clases que la de la home (con las esquinas naranjas). */
 export function ArticleFinalCta({ whatsappMessage, origen }: { whatsappMessage: string; origen: string }) {
   return (
-    <section className="final-cta">
+    <section className="final-cta reveal">
       <div className="container final-cta-inner">
         <span className="section-kicker">{CTA.final.kicker}</span>
         <h2>{CTA.final.title}<br /><em>{CTA.final.titleEm}</em></h2>

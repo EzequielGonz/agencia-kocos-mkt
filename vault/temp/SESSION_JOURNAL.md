@@ -22,3 +22,21 @@
 - url: http://localhost:3000/
 - title: Agencia de marketing digital y desarrollo web | Kocos Marketing
 
+## 2026-10-05 21:44:35.299Z network.error
+- method: GET
+- url: http://localhost:3000/
+- message: signal is aborted without reason
+- durationMs: 356
+
+## 2026-10-05 21:44:40.285Z load
+- url: http://localhost:3000/
+- title: Agencia de marketing digital y desarrollo web | Kocos Marketing
+
+## 2026-10-05 21:58:10.650Z load
+- url: http://localhost:3000/servicios
+- title: Servicios de marketing digital, web y automatización
+
+## 2026-10-05 21:58:10.735Z navigate
+- url: http://localhost:3000/servicios
+- via: replaceState
+

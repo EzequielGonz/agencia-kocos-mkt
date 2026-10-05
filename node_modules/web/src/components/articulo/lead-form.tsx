@@ -37,7 +37,7 @@ export function LeadForm({ need, industry = '', origen }: Props) {
   }
 
   return (
-    <section id="contacto" className="contact section-pad">
+    <section id="contacto" className="contact section-pad reveal">
       <div className="container contact-grid">
         <div className="contact-intro">
           <span className="section-kicker">{CTA.form.kicker}</span>
