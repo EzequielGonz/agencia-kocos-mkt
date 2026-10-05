@@ -23,6 +23,11 @@ export const siteOrigin = (request: Request): string => {
 	return `${LOCAL_HOSTNAMES.has(hostname) ? 'http' : 'https'}://${host}`;
 };
 
-/** Origen canónico: `SITE_URL` (constants/brand.ts) si está configurado; si no, el del request. */
-export const publicOrigin = (request: Request): string =>
-	SITE_URL ? SITE_URL.replace(/\/+$/, '') : siteOrigin(request);
+/**
+ * Use the configured production domain when available. Otherwise, derive the
+ * public origin from the request host so custom domains work without code edits.
+ */
+export const publicOrigin = (request: Request): string => {
+	const configuredUrl = process.env.SITE_URL?.trim() || SITE_URL;
+	return configuredUrl ? new URL(configuredUrl).origin : siteOrigin(request);
+};

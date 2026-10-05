@@ -9,8 +9,8 @@ export const HERO_URL = 'https://images.hostinger.com/c71752f2-3dd3-4e13-9bfe-a1
 
 export const FIRM_NAME = 'Kocos Marketing';
 
-/** Dominio definitivo con https y sin barra final. Ej: 'https://www.kocosmarketing.com.ar'. */
-export const SITE_URL = '';
+/** Dominio canónico definitivo; puede sobrescribirse con SITE_URL en el entorno. */
+export const SITE_URL = 'https://kocosmkt.com';
 
 // Completar estos datos cuando estén disponibles; nunca se muestran valores ficticios.
 export const CONTACT = {

@@ -12,6 +12,7 @@
  * because SEO audits score the card tags on their own.
  */
 import type { MetaDescriptor } from 'react-router';
+import { FIRM_NAME } from '@/constants/site';
 
 type RouteMatchLike = { id: string; loaderData: unknown } | undefined;
 
@@ -68,6 +69,8 @@ export function seo({ matches, location }: SeoArgs, input: SeoInput): MetaDescri
 		{ name: 'description', content: input.description },
 		{ property: 'og:title', content: input.title },
 		{ property: 'og:description', content: input.description },
+		{ property: 'og:site_name', content: FIRM_NAME },
+		{ property: 'og:locale', content: 'es_AR' },
 		{ property: 'og:type', content: input.type ?? 'website' },
 		{ name: 'twitter:card', content: imageUrl ? 'summary_large_image' : 'summary' },
 		{ name: 'twitter:title', content: input.title },
@@ -79,7 +82,11 @@ export function seo({ matches, location }: SeoArgs, input: SeoInput): MetaDescri
 	}
 
 	if (imageUrl) {
-		tags.push({ property: 'og:image', content: imageUrl }, { name: 'twitter:image', content: imageUrl });
+		tags.push(
+			{ property: 'og:image', content: imageUrl },
+			{ property: 'og:image:alt', content: `${FIRM_NAME} — agencia de marketing digital y desarrollo web` },
+			{ name: 'twitter:image', content: imageUrl },
+		);
 	}
 
 	if (input.noindex) {

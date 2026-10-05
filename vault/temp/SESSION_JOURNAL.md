@@ -40,3 +40,41 @@
 - url: http://localhost:3000/servicios
 - via: replaceState
 
+## 2026-10-05 22:04:29.758Z network.error
+- method: GET
+- url: http://localhost:3000/servicios
+- message: signal is aborted without reason
+- durationMs: 273
+
+## 2026-10-05 22:04:35.806Z load
+- url: http://localhost:3000/servicios
+- title: Servicios de marketing digital, web y automatización
+
+## 2026-10-05 22:05:19.062Z load
+- url: http://localhost:3000/servicios
+- title: Servicios de marketing digital, web y automatización
+
+## 2026-10-05 22:05:55.625Z load
+- url: http://localhost:3000/servicios
+- title: Servicios de marketing digital, web y automatización
+
+## 2026-10-05 22:05:56.012Z unhandledrejection
+- message: Failed to fetch dynamically imported module: http://localhost:3000/@fs/C:/Users/User/Desktop/kocos-marketing-seo/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx
+- stack: TypeError: Failed to fetch dynamically imported module: http://localhost:3000/@fs/C:/Users/User/Desktop/kocos-marketing-seo/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx
+
+## 2026-10-05 22:05:56.352Z load
+- url: http://localhost:3000/servicios
+- title: Servicios de marketing digital, web y automatización
+
+## 2026-10-05 22:07:58.345Z load
+- url: http://localhost:3000/servicios
+- title: Servicios de marketing digital, web y automatización
+
+## 2026-10-05 22:07:58.885Z unhandledrejection
+- message: Failed to fetch dynamically imported module: http://localhost:3000/@fs/C:/Users/User/Desktop/kocos-marketing-seo/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx
+- stack: TypeError: Failed to fetch dynamically imported module: http://localhost:3000/@fs/C:/Users/User/Desktop/kocos-marketing-seo/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx
+
+## 2026-10-05 22:07:59.295Z load
+- url: http://localhost:3000/servicios
+- title: Servicios de marketing digital, web y automatización
+

@@ -21,7 +21,7 @@ import { LOGO_URL, VERIFICATION } from '@/constants/site';
 export const links: Route.LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
 	{ rel: 'stylesheet', href: articulosStylesheet },
-	{ rel: 'icon', href: LOGO_URL, type: 'image/png' },
+	{ rel: 'icon', href: '/favicon.webp', type: 'image/webp' },
 	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 	{
 		rel: 'preconnect',
