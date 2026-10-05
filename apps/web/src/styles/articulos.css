@@ -1,0 +1,136 @@
+/*
+ * Páginas SEO (servicios, rubros, ciudades, guías, calculadora).
+ * Prefijo .doc- para no tocar nada de la home. Colores (negro, crema, naranja),
+ * tipografías (Outfit + Manrope), bordes, botones y sombras desplazadas son los
+ * de index.css; el formulario, las preguntas frecuentes y la banda final
+ * reutilizan directamente las clases de la home.
+ */
+
+/* ---------- Cabecera: versión compacta del hero negro de la home ---------- */
+.doc-hero { background: var(--ink); color: var(--cream); padding-top: 82px; }
+.doc-hero-inner { padding-top: 70px; padding-bottom: 64px; }
+.doc-breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; list-style: none; margin: 0 0 38px; padding: 0; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #a8927f; }
+.doc-breadcrumb li { display: inline-flex; align-items: center; gap: 12px; }
+.doc-breadcrumb li + li::before { content: '/'; color: var(--orange); }
+.doc-breadcrumb a { transition: color .25s; }
+.doc-breadcrumb a:hover { color: var(--orange); }
+.doc-breadcrumb [aria-current] { color: var(--cream); }
+.doc-hero h1 { font-size: clamp(50px, 6vw, 96px); letter-spacing: -.07em; font-weight: 600; line-height: .98; margin: 32px 0 34px; max-width: 1150px; animation: hero-in .8s both ease-out; }
+.doc-hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+.doc-hero-bottom p { font-size: 16px; line-height: 1.85; max-width: 520px; color: #e4d1c0; margin: 0; }
+.doc-meta { border-top: 1px solid #48403b; flex-wrap: wrap; padding: 0 20px; min-height: 70px; font-size: 11px; }
+
+/* ---------- Cuerpo ---------- */
+.doc-body { background: var(--cream); padding: 110px 0 120px; }
+.doc-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(60px, 8vw, 130px); align-items: start; }
+.doc-article { max-width: 760px; min-width: 0; }
+.doc-article-wide { max-width: 1040px; }
+.doc-section { scroll-margin-top: 105px; }
+.doc-section + .doc-section, .doc-cta + .doc-section { margin-top: 84px; }
+.doc-article h2 { font-size: clamp(36px, 3.6vw, 56px); line-height: 1.04; margin: 0 0 28px; }
+.doc-article h3 { font-size: 23px; font-weight: 600; letter-spacing: -.04em; line-height: 1.15; margin: 36px 0 10px; }
+.doc-article p { font-size: 16px; line-height: 1.85; color: #4b392f; margin: 0 0 22px; }
+.doc-article p a, .doc-list li a { font-weight: 800; border-bottom: 1px solid var(--orange); transition: color .25s; }
+.doc-article p a:hover, .doc-list li a:hover { color: var(--orange); }
+
+/* Listas: filas con línea, como la lista de "Más que diseño" */
+.doc-list { list-style: none; margin: 6px 0 30px; padding: 0; border-top: 1px solid #c9ac93; }
+.doc-list li { position: relative; padding: 18px 0 18px 34px; border-bottom: 1px solid #c9ac93; font-size: 15px; line-height: 1.7; color: #3b2e26; }
+.doc-list li::before { content: '↗'; position: absolute; left: 2px; top: 17px; color: var(--orange); font-weight: 800; }
+
+/* Pasos: número naranja en Outfit, como "Así trabajamos" */
+.doc-steps { list-style: none; margin: 6px 0 30px; padding: 0; }
+.doc-steps li { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 18px; padding: 24px 0; border-top: 1px solid #c9ac93; }
+.doc-steps li:last-child { border-bottom: 1px solid #c9ac93; }
+.doc-steps .step-marker { font-family: 'Outfit', sans-serif; font-size: 42px; line-height: 1; letter-spacing: -.06em; color: var(--orange); }
+.doc-steps .step-marker::before { content: '0'; }
+.doc-steps h3 { margin: 4px 0 6px; font-size: 22px; }
+.doc-steps p { font-size: 14.5px; line-height: 1.75; margin: 0; }
+
+/* Nota destacada: la franja naranja de "Más que diseño" */
+.doc-article .doc-note { margin: 34px 0; padding: 22px 24px; background: var(--orange); color: var(--ink); font-size: 15px; font-weight: 700; line-height: 1.7; }
+.doc-article .doc-note a { border-color: var(--ink); }
+.doc-article .doc-note a:hover { color: var(--cream); }
+
+/* ---------- CTA a mitad: el bloque de "¿Necesitás algo diferente?" ---------- */
+.doc-cta { margin: 84px 0; padding: clamp(32px, 4.5vw, 48px); background: var(--ink); color: var(--cream); box-shadow: 10px 10px 0 var(--orange); }
+.doc-article .doc-cta-title { font-family: 'Outfit', sans-serif; font-size: clamp(32px, 3.2vw, 46px); font-weight: 600; letter-spacing: -.045em; line-height: 1.05; color: var(--cream); margin: 18px 0 12px; }
+.doc-article .doc-cta-text { font-size: 15px; color: #e4d1c0; max-width: 540px; margin: 0; }
+.doc-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+/* ---------- Índice lateral ---------- */
+.doc-aside { position: sticky; top: 115px; display: flex; flex-direction: column; gap: 42px; }
+.doc-toc .section-kicker { display: block; margin-bottom: 18px; }
+.doc-toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid #c9ac93; }
+.doc-toc a { display: block; padding: 7px 0 7px 18px; margin-left: -1px; border-left: 2px solid transparent; font-size: 13px; font-weight: 700; line-height: 1.45; color: #5d493d; transition: color .25s, border-color .25s; }
+.doc-toc a:hover { color: var(--ink); border-color: var(--orange); }
+.doc-aside-cta { padding: 28px 24px; background: #f7d9bc; border: 1px solid #d7b69a; }
+.doc-aside-title { font-family: 'Outfit', sans-serif; font-size: 27px; font-weight: 600; letter-spacing: -.04em; line-height: 1.05; margin: 0 0 10px; }
+.doc-aside-cta p:not(.doc-aside-title) { font-size: 13px; line-height: 1.7; color: #5d493d; margin: 0 0 22px; }
+.doc-aside-cta .button { width: 100%; min-height: 52px; }
+.doc-aside-cta .button + .button { margin-top: 8px; }
+
+/* ---------- Filas de enlaces: como "Una presencia digital pensada para crecer" ---------- */
+.doc-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid #bfa996; }
+.doc-rows a { display: grid; grid-template-columns: minmax(0, 1fr) 30px; gap: 6px 22px; padding: 26px 8px; border-bottom: 1px solid #bfa996; transition: padding .3s, background .3s; }
+.doc-rows a:hover { padding-left: 20px; background: #f9d9bb; }
+.doc-row-title { font-family: 'Outfit', sans-serif; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; }
+.doc-row-text { grid-column: 1; font-size: 13.5px; line-height: 1.7; color: #5d493d; }
+.doc-row-arrow { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: end; transition: color .25s; }
+.doc-rows a:hover .doc-row-arrow { color: var(--orange); }
+
+/* Preguntas frecuentes: usa .faq-list de la home */
+.doc-article .faq-list details p { padding: 0 40px 25px 0; }
+
+/* ---------- Relacionadas ---------- */
+.doc-related { background: #f6dbc2; }
+.doc-related .section-kicker { display: block; }
+.doc-related h2 { margin-bottom: 52px; }
+.doc-related .doc-rows a { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) 30px; align-items: center; padding: 32px 8px; }
+.doc-related .doc-row-text { grid-column: 2; }
+.doc-related .doc-row-arrow { grid-column: 3; grid-row: 1; }
+
+/* ---------- Calculadora: el panel del formulario de contacto ---------- */
+.doc-calc { margin: 0 0 84px; background: #f7d9bc; border: 1px solid #d7b69a; padding: clamp(24px, 4vw, 38px); }
+.doc-calc .form-grid label { font-size: 12px; }
+.doc-calc-result { margin-top: 30px; padding-top: 26px; border-top: 1px solid #c9ac93; }
+.doc-calc-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+.doc-article .doc-calc-figures p { margin: 0; padding: 22px; background: var(--ink); color: var(--cream); display: flex; flex-direction: column; gap: 10px; }
+.doc-calc-figures span { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); }
+.doc-calc-figures strong { font-family: 'Outfit', sans-serif; font-size: clamp(30px, 3.4vw, 46px); font-weight: 600; letter-spacing: -.06em; line-height: 1; }
+.doc-article .doc-calc-note { font-size: 12.5px; line-height: 1.65; color: #6f5847; margin: 0 0 22px; }
+
+/* ---------- Header: dos secciones nuevas sin apilar el menú ---------- */
+.header-nav > a { white-space: nowrap; }
+@media (max-width: 1000px) and (min-width: 761px) { .header-nav > a:first-child { display: none; } }
+@media (max-width: 860px) and (min-width: 761px) { .header-cta { padding: 12px 14px; gap: 10px; } }
+
+/* ---------- Responsive (mismos cortes que la home) ---------- */
+@media (max-width: 1100px) { .doc-grid { grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; } }
+@media (max-width: 1000px) {
+  .doc-grid { grid-template-columns: 1fr; }
+  .doc-aside { display: none; }
+  .doc-article { max-width: 780px; }
+}
+@media (max-width: 1050px) { .doc-hero-bottom { flex-direction: column; align-items: start; } }
+@media (max-width: 760px) {
+  .doc-hero { padding-top: 69px; }
+  .doc-hero-inner { padding-top: 44px; padding-bottom: 48px; }
+  .doc-hero h1 { font-size: clamp(42px, 11vw, 62px); margin: 24px 0 26px; }
+  .doc-meta { gap: 14px; font-size: 10px; }
+  .doc-body { padding: 72px 0 84px; }
+  .doc-section + .doc-section, .doc-cta + .doc-section { margin-top: 64px; }
+  .doc-article h2 { font-size: clamp(32px, 9vw, 44px); }
+  .doc-article p { font-size: 15px; }
+  .doc-cta { margin: 64px 0; box-shadow: 6px 6px 0 var(--orange); }
+  .doc-related .doc-rows a { grid-template-columns: minmax(0, 1fr) 30px; align-items: start; }
+  .doc-related .doc-row-text { grid-column: 1; }
+  .doc-related .doc-row-arrow { grid-column: 2; grid-row: 1 / span 2; }
+  .doc-calc-figures { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .doc-hero .hero-actions { flex-direction: column; width: 100%; }
+  .doc-hero .hero-actions .button, .doc-cta-actions .button { width: 100%; }
+  .doc-steps li { grid-template-columns: 44px minmax(0, 1fr); gap: 12px; }
+  .doc-steps .step-marker { font-size: 32px; }
+}

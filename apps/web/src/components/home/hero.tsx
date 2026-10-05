@@ -1,0 +1,6 @@
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { HERO_URL } from '@/constants/site';
+
+export function Hero() {
+  return <section id="inicio" className="hero"><div className="container hero-content"><div className="hero-eyebrow"><span className="eyebrow-line" /></div><h1>Tu marca merece<br />una presencia <em>que esté<br className="desktop-break" /> a la altura.</em></h1><div className="hero-bottom"><p>Diseñamos tu web, potenciamos tus redes y construimos una presencia digital profesional para que tu negocio pueda crecer.</p><div className="hero-actions"><a href="#contacto" className="button button-orange">Quiero potenciar mi marca <ArrowUpRight size={19} /></a><a href="#planes" className="button button-outline">Ver planes <ArrowDown size={18} /></a></div></div></div><div className="hero-media"><img src={HERO_URL} alt="Estudio creativo trabajando en diseño web y estrategia digital" width="1536" height="1024" fetchPriority="high" /><div className="hero-media-label"><span>Diseño que impulsa negocios ↗</span></div></div><div className="trust-strip"><span>DISEÑO</span><span className="trust-plus">+</span><span>ESTRATEGIA</span><span className="trust-plus">+</span><span>PRESENCIA DIGITAL</span></div></section>;
+}
