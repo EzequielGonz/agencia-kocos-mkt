@@ -6,3 +6,19 @@
 - url: http://localhost:3000/
 - via: replaceState
 
+## 2026-10-05 21:28:35.302Z load
+- url: http://localhost:3000/
+- title: Agencia de marketing digital y desarrollo web | Kocos Marketing
+
+## 2026-10-05 21:28:36.474Z load
+- url: http://localhost:3000/
+- title: Agencia de marketing digital y desarrollo web | Kocos Marketing
+
+## 2026-10-05 21:28:59.037Z load
+- url: http://localhost:3000/
+- title: Agencia de marketing digital y desarrollo web | Kocos Marketing
+
+## 2026-10-05 21:29:00.269Z load
+- url: http://localhost:3000/
+- title: Agencia de marketing digital y desarrollo web | Kocos Marketing
+
