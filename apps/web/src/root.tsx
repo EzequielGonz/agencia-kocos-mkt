@@ -10,6 +10,8 @@ import {
 import type { Route } from './+types/root';
 import stylesheet from '@/index.css?url';
 import articulosStylesheet from '@/styles/articulos.css?url';
+// Ajustes del 21/10 (CTA por sección, WhatsApp, nombre de la firma). Va último para prevalecer.
+import ajustesStylesheet from '@/styles/ajustes.css?url';
 import { publicOrigin } from '@/lib/site-origin.server';
 import { HorizonsPreviewScripts } from './horizons-preview-scripts';
 import { SiteHeader } from '@/components/site-header';
@@ -21,6 +23,7 @@ import { LOGO_URL, VERIFICATION } from '@/constants/site';
 export const links: Route.LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
 	{ rel: 'stylesheet', href: articulosStylesheet },
+	{ rel: 'stylesheet', href: ajustesStylesheet },
 	{ rel: 'icon', href: '/favicon.webp', type: 'image/webp' },
 	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 	{
