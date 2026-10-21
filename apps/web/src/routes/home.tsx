@@ -12,6 +12,7 @@ import { Portfolio } from '@/components/home/portfolio';
 import { Faq } from '@/components/home/faq';
 import { FinalCta } from '@/components/home/final-cta';
 import { Contact } from '@/components/home/contact';
+import { SeccionCta } from '@/components/seccion-cta';
 
 export function meta({ matches, location }: Route.MetaArgs) {
   const origin = siteOriginFrom(matches);
@@ -23,5 +24,11 @@ export function meta({ matches, location }: Route.MetaArgs) {
   });
 }
 export default function HomePage() {
-  return <main><Hero /><Approach /><Services /><Plans /><Process /><Difference /><Portfolio /><Faq /><FinalCta /><Contact /></main>;
+  return <main><Hero /><Approach /><Services />
+    <SeccionCta titulo="¿Qué servicio necesita tu marca?" texto="Contanos tu negocio y te decimos por dónde empezar: redes, diseño, web o campañas." mensaje="Hola Kocos Marketing, vi sus servicios y quiero saber cuál le conviene a mi negocio." />
+    <Plans />
+    <SeccionCta titulo="¿Dudás entre dos planes?" texto="Te ayudamos a elegir el que encaja con tu etapa y tu inversión." mensaje="Hola Kocos Marketing, quiero que me asesoren sobre qué plan me conviene." boton="Elegir mi plan" />
+    <Process /><Difference /><Portfolio />
+    <SeccionCta titulo="¿Querés resultados como estos?" texto="Mirá cómo trabajamos con otras marcas y armemos la tuya." mensaje="Hola Kocos Marketing, vi sus trabajos y quiero algo así para mi marca." />
+    <Faq /><FinalCta /><Contact /></main>;
 }
