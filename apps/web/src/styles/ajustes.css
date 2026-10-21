@@ -1,0 +1,9 @@
+
+/* Llamados a la acción entre secciones (21/10) */
+.seccion-cta { padding: 56px 0; }
+.seccion-cta-inner { background: var(--ink); color: var(--cream); }
+.seccion-cta-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 32px; }
+.seccion-cta-titulo { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.2; margin: 0 0 8px; }
+.seccion-cta-texto { margin: 0; opacity: .8; max-width: 560px; }
+.seccion-cta-acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 640px) { .seccion-cta-inner { padding: 24px; } .seccion-cta-acciones, .seccion-cta-acciones .button { width: 100%; justify-content: center; } }
