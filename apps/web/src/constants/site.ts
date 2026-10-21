@@ -15,10 +15,13 @@ export const SITE_URL = 'https://kocosmkt.com';
 // Completar estos datos cuando estén disponibles; nunca se muestran valores ficticios.
 export const CONTACT = {
   /** Solo números con código de país. Ej: '5491140000000'. Vacío → los botones llevan al formulario. */
-  whatsapp: '5492235223906',
-  email: '',
-  instagram: '', // URL completa. Ej: 'https://www.instagram.com/kocosmarketing'
-  facebook: '',
+  /** Línea de WhatsApp conectada al CRM (responde el agente de Marketing). */
+  whatsapp: '5491172502391',
+  /** Teléfono tal como se muestra. */
+  phone: '11 7250-2391',
+  email: 'agenciakocos@hotmail.com',
+  instagram: 'https://www.instagram.com/kocosmkt/',
+  facebook: 'https://www.facebook.com/profile.php?id=61595100234671',
   tiktok: '',
   linkedin: '',
 };
