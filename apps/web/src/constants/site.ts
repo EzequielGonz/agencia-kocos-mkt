@@ -13,7 +13,7 @@ export const SHARE_IMAGE_URL = '/img/og-compartir.jpg';
 export const FIRM_NAME = 'Kocos Marketing';
 
 /** Dominio canónico definitivo; puede sobrescribirse con SITE_URL en el entorno. */
-export const SITE_URL = 'https://kocosmkt.com';
+export const SITE_URL = 'https://www.kocosmkt.com';
 /** Logo con dominio completo, para los datos estructurados. */
 export const LOGO_ABSOLUTE_URL = `${SITE_URL}${LOGO_URL}`;
 
