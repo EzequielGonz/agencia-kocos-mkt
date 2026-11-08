@@ -1,5 +1,5 @@
 /** Datos estructurados (JSON-LD): no se ven, le explican a Google qué es la agencia y cada página. */
-import { CONTACT, FIRM_NAME, LOGO_URL, SOCIAL_LINKS } from '@/constants/site';
+import { CONTACT, FIRM_NAME, LOGO_ABSOLUTE_URL, SOCIAL_LINKS } from '@/constants/site';
 
 const CONTEXT = 'https://schema.org';
 export const firmId = (origin: string) => `${origin}/#agencia`;
@@ -12,8 +12,8 @@ export function businessSchema(origin: string) {
     name: FIRM_NAME,
     description: 'Agencia de marketing digital en Argentina: desarrollo web, e-commerce, automatizaciones con IA, sistemas a medida y gestión de redes sociales para empresas.',
     url: `${origin}/`,
-    logo: LOGO_URL,
-    image: LOGO_URL,
+    logo: LOGO_ABSOLUTE_URL,
+    image: LOGO_ABSOLUTE_URL,
     email: CONTACT.email || undefined,
     areaServed: { '@type': 'Country', name: 'Argentina' },
     knowsAbout: ['Desarrollo web', 'Landing pages', 'E-commerce', 'Automatización de procesos', 'Inteligencia artificial', 'CRM', 'Software a medida', 'Gestión de redes sociales', 'Marketing digital'],
@@ -34,7 +34,7 @@ export function articleSchema(origin: string, article: { path: string; title: st
   return {
     '@context': CONTEXT, '@type': 'Article', '@id': `${url}#articulo`, mainEntityOfPage: url,
     headline: article.title.slice(0, 110), description: article.description, inLanguage: 'es-AR',
-    datePublished: article.published, dateModified: article.updated, image: LOGO_URL,
+    datePublished: article.published, dateModified: article.updated, image: LOGO_ABSOLUTE_URL,
     author: { '@id': firmId(origin) }, publisher: { '@id': firmId(origin) },
   };
 }

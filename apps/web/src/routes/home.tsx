@@ -1,6 +1,6 @@
 import type { Route } from './+types/home';
 import { seo, siteOriginFrom } from '@/lib/seo';
-import { FIRM_NAME, HERO_URL } from '@/constants/site';
+import { FIRM_NAME, SHARE_IMAGE_URL } from '@/constants/site';
 import { businessSchema, websiteSchema } from '@/lib/schema';
 import { Hero } from '@/components/home/hero';
 import { Approach } from '@/components/home/approach';
@@ -19,7 +19,7 @@ export function meta({ matches, location }: Route.MetaArgs) {
   return seo({ matches, location }, {
     title: `Agencia de marketing digital y desarrollo web | ${FIRM_NAME}`,
     description: 'Agencia de marketing digital en Argentina: páginas web, tiendas online, automatizaciones con IA, sistemas a medida y gestión de redes sociales para empresas.',
-    image: HERO_URL,
+    image: SHARE_IMAGE_URL,
     jsonLd: [businessSchema(origin), websiteSchema(origin)],
   });
 }

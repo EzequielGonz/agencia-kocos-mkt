@@ -7,6 +7,7 @@ import { getGuiasHub } from '@/content/index.server';
 import { withBrand } from '@/lib/page-meta';
 import { breadcrumbSchema, businessSchema } from '@/lib/schema';
 import { seo, siteOriginFrom } from '@/lib/seo';
+import { SHARE_IMAGE_URL } from '@/constants/site';
 
 const PATH = '/guias';
 const BREADCRUMBS = [{ name: 'Inicio', path: '/' }, { name: 'Guías', path: PATH }];
@@ -22,6 +23,7 @@ export function meta({ matches, location }: Route.MetaArgs) {
     title: withBrand('Guías de marketing digital para empresas'),
     description: 'Guías para decidir sobre tu presencia digital: cuánto cuesta una web, qué automatizar, IA para empresas, redes sociales y cómo elegir una agencia.',
     path: PATH,
+    image: SHARE_IMAGE_URL,
     jsonLd: [businessSchema(origin), breadcrumbSchema(origin, BREADCRUMBS)],
   });
 }

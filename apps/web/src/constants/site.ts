@@ -1,5 +1,8 @@
-export const LOGO_URL = 'https://horizons-cdn.hostinger.com/275ad696-7806-4d8b-9e1a-0ca4a8f99744/ee6bb9c676fd6486656c51b85c38eeb3.png';
-export const HERO_URL = 'https://images.hostinger.com/c71752f2-3dd3-4e13-9bfe-a13e3ffcc5b8.png';
+/** Imágenes servidas desde el propio sitio (el CDN de Hostinger dejó de responder). */
+export const LOGO_URL = '/logo-marca.png';
+export const HERO_URL = '/img/marketing-hero.webp';
+/** Imagen para compartir el enlace (WhatsApp, redes): 1200 × 630. */
+export const SHARE_IMAGE_URL = '/img/og-compartir.jpg';
 
 /* ============================================================================
  * DATOS DE LA AGENCIA — ÚNICO LUGAR PARA COMPLETAR
@@ -11,6 +14,8 @@ export const FIRM_NAME = 'Kocos Marketing';
 
 /** Dominio canónico definitivo; puede sobrescribirse con SITE_URL en el entorno. */
 export const SITE_URL = 'https://kocosmkt.com';
+/** Logo con dominio completo, para los datos estructurados. */
+export const LOGO_ABSOLUTE_URL = `${SITE_URL}${LOGO_URL}`;
 
 // Completar estos datos cuando estén disponibles; nunca se muestran valores ficticios.
 export const CONTACT = {
@@ -30,7 +35,7 @@ export const CONTACT = {
 export const VERIFICATION = { google: '', bing: '' };
 
 /** Clave de IndexNow (32 letras/números) para indexación rápida en Bing y otros. */
-export const INDEXNOW_KEY = '';
+export const INDEXNOW_KEY = '699a3be95b8f40eacd576659cd1c1ccc';
 
 /**
  * Rangos de inversión del formulario de las páginas nuevas (sirven para

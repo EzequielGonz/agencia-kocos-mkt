@@ -1,5 +1,5 @@
 import type { MetaDescriptor } from 'react-router';
-import { FIRM_NAME, HERO_URL as SHARE_IMAGE_URL } from '@/constants/site';
+import { FIRM_NAME, SHARE_IMAGE_URL } from '@/constants/site';
 import type { PageData } from '@/content/types';
 import { articleSchema, breadcrumbSchema, businessSchema, faqSchema, serviceSchema } from '@/lib/schema';
 import { seo, siteOriginFrom, type SeoArgs } from '@/lib/seo';

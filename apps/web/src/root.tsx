@@ -25,6 +25,7 @@ export const links: Route.LinksFunction = () => [
 	{ rel: 'stylesheet', href: articulosStylesheet },
 	{ rel: 'stylesheet', href: ajustesStylesheet },
 	{ rel: 'icon', href: '/favicon.webp', type: 'image/webp' },
+	{ rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
 	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 	{
 		rel: 'preconnect',

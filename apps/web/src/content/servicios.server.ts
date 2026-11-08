@@ -1,5 +1,9 @@
 import type { ConsultaTipo, Page } from './types';
 
+/** Recorta una descripción sin cortar palabras a la mitad (Google muestra ~160 caracteres). */
+const recortar = (texto: string, max = 160): string => (texto.length <= max ? texto : `${texto.slice(0, max - 1).replace(/[\s,.;:]+\S*$/, '')}…`);
+
+
 const D = '2026-09-30';
 const S = '/servicios';
 
@@ -239,7 +243,7 @@ function servicioToPage(s: Servicio): Page {
     updated: D,
     path: `${S}/${s.slug}`,
     title: s.titulo,
-    description: `${s.intro} Para empresas de toda Argentina.`.length <= 160 ? `${s.intro} Para empresas de toda Argentina.` : s.intro.slice(0, 158),
+    description: recortar(`${s.intro} Para empresas de toda Argentina.`),
     label: `/ ${s.nombre.toUpperCase()}`,
     h1: s.h1,
     h1Em: s.h1Em,
