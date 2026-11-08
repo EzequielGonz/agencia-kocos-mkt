@@ -29,5 +29,10 @@ export const siteOrigin = (request: Request): string => {
  */
 export const publicOrigin = (request: Request): string => {
 	const configuredUrl = process.env.SITE_URL?.trim() || SITE_URL;
-	return configuredUrl ? new URL(configuredUrl).origin : siteOrigin(request);
+	if (!configuredUrl) return siteOrigin(request);
+	const configured = new URL(configuredUrl);
+	// El dominio sin www redirige (308) a www. Si la variable de entorno quedó
+	// sin www, se publica la dirección final para no apuntar a una redirección.
+	if (SITE_URL && `www.${configured.hostname}` === new URL(SITE_URL).hostname) return new URL(SITE_URL).origin;
+	return configured.origin;
 };
