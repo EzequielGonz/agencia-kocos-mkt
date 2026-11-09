@@ -1,8 +1,60 @@
 import { ArrowUpRight } from 'lucide-react';
-// Agregá proyectos reales a esta lista cuando estén disponibles.
-const projects: { name: string; category: string; image: string; url: string }[] = [];
+
+// Trabajos reales publicados. Las capturas son de los sitios en producción (09/11/2026);
+// al desplazarse, cada captura recorre su página dentro del navegador y del celular.
+const trabajos = [
+  {
+    id: 'vita',
+    nombre: 'VITA Abogados',
+    rubro: 'Estudio jurídico de accidentes de tránsito y laborales',
+    hicimos: ['Portada con las dos consultas que abren WhatsApp ya redactado', 'Sello de guilloché con el grabado de la marca', 'Croquis del choque y recorrido del reclamo animados', 'Guías y páginas para buscadores'],
+    dominio: 'estudiojuridicovita.com',
+    url: 'https://www.estudiojuridicovita.com/',
+  },
+  {
+    id: 'cob',
+    nombre: 'Compara Tu Obra Social',
+    rubro: 'Comparador de prepagas y obras sociales',
+    hicimos: ['Perfil de cobertura en cuatro preguntas que llega armado a WhatsApp', 'Recibo de sueldo y comparación ilustrativos', 'Contenido para cada situación de las redes', 'Guías, cotizador de aportes y páginas por zona'],
+    dominio: 'comparatuobrasocial.com',
+    url: 'https://www.comparatuobrasocial.com/',
+  },
+];
+
 export function Portfolio() {
-  // Sin proyectos reales cargados, la sección no se muestra (antes mostraba «Próximamente»).
-  if (!projects.length) return null;
-  return <section className="portfolio section-pad" id="trabajos"><div className="container"><div className="section-heading reveal"><div><h2>Proyectos que hablan{' '}<br /><em>por nosotros.</em></h2></div><p>Cada proyecto es una oportunidad para construir algo que represente de verdad a una marca.</p></div>{projects.length ? <div className="portfolio-grid">{projects.map(project => <article className="project-card" key={project.name}><img src={project.image} alt={`Proyecto ${project.name}`} loading="lazy" /><div><span>{project.category}</span><h3>{project.name}</h3><a href={project.url} target="_blank" rel="noopener noreferrer">Ver proyecto <ArrowUpRight size={18} /></a></div></article>)}</div> : <div className="portfolio-grid"><div className="project-placeholder reveal"><div className="mock-browser"><div className="mock-bar"><i /><i /><i /></div><div className="mock-layout"><div className="mock-type"><span /><span /><span /></div><div className="mock-art" /></div></div><div className="placeholder-caption"><span>PRÓXIMAMENTE / 01</span><span>Próximos proyectos <ArrowUpRight size={18} /></span></div></div><div className="project-placeholder project-placeholder-alt reveal"><div className="mock-phone"><div className="mock-phone-top" /><div className="mock-phone-art" /><div className="mock-phone-lines"><span /><span /></div></div><div className="placeholder-caption"><span>PRÓXIMAMENTE / 02</span><span>Nuevas historias <ArrowUpRight size={18} /></span></div></div></div>}</div></section>;
+  return (
+    <section className="seccion trabajos" id="trabajos">
+      <div className="contenedor">
+        <div className="trabajos-cabeza">
+          <h2 className="revela">Trabajos publicados</h2>
+          <p className="seccion-bajada">Dos sitios que diseñamos y desarrollamos, con su WhatsApp, sus guías y sus animaciones. Están en línea: podés entrar y probarlos.</p>
+        </div>
+        <div className="trabajos-lista">
+          {trabajos.map((t, i) => (
+            <article className={`trabajo${i % 2 ? ' trabajo-invertido' : ''}`} key={t.id}>
+              <div className="trabajo-texto">
+                <h3>{t.nombre}</h3>
+                <p className="trabajo-rubro">{t.rubro}</p>
+                <ul>{t.hicimos.map(item => <li key={item}>{item}</li>)}</ul>
+                <a className="enlace-flecha" href={t.url} target="_blank" rel="noopener noreferrer">Ver el sitio <ArrowUpRight size={17} aria-hidden="true" /></a>
+              </div>
+              <div className="trabajo-equipos" aria-hidden="true">
+                <div className="navegador">
+                  <div className="navegador-barra"><i /><i /><i /><span>{t.dominio}</span></div>
+                  <div className="navegador-pantalla">
+                    <img className="captura" src={`/img/trabajos/${t.id}-escritorio.webp`} alt="" width="1280" height="2578" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+                <div className="celular">
+                  <div className="celular-pantalla">
+                    <img className="captura" src={`/img/trabajos/${t.id}-celular.webp`} alt="" width="430" height="2977" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

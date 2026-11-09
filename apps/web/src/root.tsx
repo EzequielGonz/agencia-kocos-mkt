@@ -15,6 +15,8 @@ import ajustesStylesheet from '@/styles/ajustes.css?url';
 // Fuentes propias (sin Google Fonts) y pulido visual del 09/11. Van al final para prevalecer.
 import fuentesStylesheet from '@/styles/fuentes.css?url';
 import pulidoStylesheet from '@/styles/pulido.css?url';
+// Rediseño premium del 09/11: papel, tinta y la cinta naranja del logo. Va último.
+import premiumStylesheet from '@/styles/premium.css?url';
 import { publicOrigin } from '@/lib/site-origin.server';
 import { HorizonsPreviewScripts } from './horizons-preview-scripts';
 import { SiteHeader } from '@/components/site-header';
@@ -31,6 +33,7 @@ export const links: Route.LinksFunction = () => [
 	{ rel: 'preload', href: '/fonts/manrope-normal-latin-58ee19.woff2', as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
 	{ rel: 'stylesheet', href: fuentesStylesheet },
 	{ rel: 'stylesheet', href: pulidoStylesheet },
+	{ rel: 'stylesheet', href: premiumStylesheet },
 	{ rel: 'icon', href: '/favicon.webp', type: 'image/webp' },
 	{ rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
 ];
