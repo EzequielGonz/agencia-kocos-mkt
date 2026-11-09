@@ -1,10 +1,41 @@
-import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router';
+import { Facebook, Instagram, Mail, MessageCircle, Phone } from 'lucide-react';
 import { BrandLogo } from '@/components/brand-logo';
 import { CONTACT, whatsappHref } from '@/constants/site';
 
-const socials = [{ label: 'Instagram', url: CONTACT.instagram }, { label: 'Facebook', url: CONTACT.facebook }, { label: 'TikTok', url: CONTACT.tiktok }, { label: 'LinkedIn', url: CONTACT.linkedin }];
-
 export function SiteFooter() {
-  return <footer className="site-footer"><div className="container footer-top"><div><a href="/#inicio" aria-label="Kocos Marketing, volver al inicio"><BrandLogo /></a><p>Kocos Marketing — Diseño, estrategia y presencia digital.</p></div><div className="footer-links"><span>Explorar</span><a href="/#inicio">Inicio</a><Link to="/servicios">Servicios</Link><Link to="/rubros">Rubros</Link><Link to="/guias">Guías</Link><a href="/#planes">Planes</a><a href="/#preguntas">FAQ</a><a href="#contacto">Contacto</a></div><div className="footer-links"><span>Conectemos</span><a href={whatsappHref()} target={CONTACT.whatsapp ? '_blank' : undefined} rel={CONTACT.whatsapp ? 'noopener noreferrer' : undefined}>WhatsApp <ArrowUpRight size={14} /></a>{CONTACT.phone && <a href={`tel:+${CONTACT.whatsapp}`}>{CONTACT.phone} <ArrowUpRight size={14} /></a>}{CONTACT.email && <a href={`mailto:${CONTACT.email}`}>{CONTACT.email} <ArrowUpRight size={14} /></a>}{socials.filter(item => item.url).map(item => <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer">{item.label} <ArrowUpRight size={14} /></a>)}</div></div><div className="container footer-bottom"><span>© 2026 Kocos Marketing. Todos los derechos reservados.</span><span>Diseñado para ir más allá.</span></div></footer>;
+  return (
+    <footer className="site-footer">
+      <div className="container footer-top">
+        <div className="footer-brand">
+          <a href="/#inicio" aria-label="Kocos Marketing, volver al inicio"><BrandLogo /></a>
+          <p>Webs, tiendas online, WhatsApp con CRM, automatizaciones y redes para pymes de Argentina.</p>
+          <a className="footer-cta" href={whatsappHref()} target="_blank" rel="noopener noreferrer"><MessageCircle size={18} aria-hidden="true" /> Hablar por WhatsApp</a>
+        </div>
+        <nav className="footer-links" aria-label="Servicios">
+          <h3>Servicios</h3>
+          <Link to="/servicios">Servicios</Link>
+          <Link to="/rubros">Rubros</Link>
+          <a href="/#planes">Planes</a>
+          <Link to="/guias">Guías</Link>
+        </nav>
+        <nav className="footer-links" aria-label="Ayuda">
+          <h3>Ayuda</h3>
+          <a href="/#preguntas">Preguntas frecuentes</a>
+          <a href="/#contacto">Dejar mis datos</a>
+        </nav>
+        <div className="footer-links footer-contact">
+          <h3>Contacto</h3>
+          {CONTACT.phone && <a href={`tel:+${CONTACT.whatsapp}`}><Phone size={16} strokeWidth={1.6} aria-hidden="true" /> {CONTACT.phone}</a>}
+          {CONTACT.email && <a href={`mailto:${CONTACT.email}`}><Mail size={16} strokeWidth={1.6} aria-hidden="true" /> {CONTACT.email}</a>}
+          {CONTACT.instagram && <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={16} strokeWidth={1.6} aria-hidden="true" /> @kocosmkt</a>}
+          {CONTACT.facebook && <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer"><Facebook size={16} strokeWidth={1.6} aria-hidden="true" /> Facebook</a>}
+        </div>
+      </div>
+      <div className="container footer-bottom">
+        <span>© {new Date().getFullYear()} Kocos Marketing</span>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+    </footer>
+  );
 }

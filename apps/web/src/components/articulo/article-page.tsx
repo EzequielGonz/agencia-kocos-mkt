@@ -99,7 +99,7 @@ export function ArticlePage({ data, children }: Props) {
           <aside className="doc-aside reveal" aria-label="En esta página">
             {toc.length > 2 && (
               <nav className="doc-toc" aria-label="Índice">
-                <span className="section-kicker">/ EN ESTA PÁGINA</span>
+                
                 <ol>{toc.map(item => <li key={item.id}><a href={`#${item.id}`}>{item.title}</a></li>)}</ol>
               </nav>
             )}
@@ -115,7 +115,7 @@ export function ArticlePage({ data, children }: Props) {
       {related.length > 0 && (
         <section className="doc-related section-pad reveal">
           <div className="container">
-            <span className="section-kicker">/ SEGUÍ EXPLORANDO</span>
+            
             <h2>También te puede <em>interesar.</em></h2>
             <LinkRows links={related} />
           </div>

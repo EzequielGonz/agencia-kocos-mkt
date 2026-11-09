@@ -40,7 +40,7 @@ export function LeadForm({ need, industry = '', origen }: Props) {
     <section id="contacto" className="contact section-pad reveal">
       <div className="container contact-grid">
         <div className="contact-intro">
-          <span className="section-kicker">{CTA.form.kicker}</span>
+          
           <h2>{CTA.form.title}<br /><em>{CTA.form.titleEm}</em></h2>
           <p>{CTA.form.intro}</p>
           <div className="contact-aside"><span>{CTA.form.aside}</span><ArrowUpRight size={45} strokeWidth={1} /></div>

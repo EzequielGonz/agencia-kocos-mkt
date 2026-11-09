@@ -16,7 +16,7 @@ type Props = {
 };
 
 /** Cabecera oscura con la tipografía, etiqueta y botones del hero de la home. */
-export function DocHero({ label, h1, h1Em, lead, breadcrumbs, updated, origen, whatsappMessage }: Props) {
+export function DocHero({ h1, h1Em, lead, breadcrumbs, updated, origen, whatsappMessage }: Props) {
   return (
     <section className="doc-hero" id="inicio">
       <div className="container doc-hero-inner">
@@ -29,7 +29,7 @@ export function DocHero({ label, h1, h1Em, lead, breadcrumbs, updated, origen, w
             ))}
           </ol>
         </nav>
-        <div className="hero-eyebrow"><span className="eyebrow-line" /> {label}</div>
+        
         <h1>{h1}{h1Em && <><br /><em>{h1Em}</em></>}</h1>
         <div className="doc-hero-bottom">
           <p>{lead}</p>

@@ -1,0 +1,43 @@
+/* Pulido visual del 09/11/2026: sin etiquetas sobre los títulos, hero concreto,
+   título legible, pie de página ordenado y microinteracciones. */
+
+::selection { background: #fc6e20; color: #1b1b1b; }
+
+/* Título: el interletrado de -0,07em pegaba las palabras («Tumarca») */
+.hero h1, .doc-hero h1 { letter-spacing: -.035em; word-spacing: .04em; }
+h2 { letter-spacing: -.035em; }
+.hero h1 em { color: var(--orange); }
+.hero-actions .button svg { flex: none; }
+
+/* Franja de servicios: que entre en el teléfono */
+@media (max-width: 760px) { .trust-strip { flex-wrap: wrap; row-gap: 6px; padding: 14px 16px; } }
+
+/* Botones y foco */
+.button { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+.button:hover { transform: translateY(-1px); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #fc6e20; outline-offset: 3px; border-radius: 4px; }
+
+/* Pie de página */
+.site-footer { border-top: 1px solid #3a302a; padding: 80px 0 26px; }
+.footer-top { grid-template-columns: 1.5fr .9fr .9fr 1.5fr; gap: 48px; padding-bottom: 64px; }
+.footer-brand p { font-size: 15px; line-height: 1.7; color: #d9c2ae; max-width: 340px; margin: 22px 0 24px; }
+.footer-cta { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 999px; background: #fc6e20; color: #1b1b1b; font-size: 14px; font-weight: 800; transition: transform .2s ease, background-color .2s ease; }
+.footer-cta:hover { background: #ff8a45; transform: translateY(-1px); }
+.footer-links { gap: 4px; }
+.footer-links h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0; color: #ffe7d0; margin: 0 0 12px; }
+.footer-links a { min-height: 36px; font-size: 15px; gap: 12px; color: #e8d3bf; }
+.footer-links a:hover { color: #fc6e20; }
+.footer-contact a { white-space: nowrap; }
+.footer-contact svg { color: #fc6e20; flex: none; }
+.footer-bottom { font-size: 13px; padding-right: 76px; }
+
+@media (max-width: 760px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px 22px; }
+  .footer-brand, .footer-contact { grid-column: 1 / -1; }
+  .footer-links a { min-height: 42px; white-space: nowrap; font-size: 14px; }
+  .footer-contact a { white-space: normal; overflow-wrap: anywhere; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
+
+/* Botón de WhatsApp del hero: ícono y texto juntos, centrados */
+.hero-actions .button-orange { justify-content: center; gap: 10px; }
