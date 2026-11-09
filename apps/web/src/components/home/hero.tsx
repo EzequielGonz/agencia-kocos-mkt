@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { whatsappHref } from '@/constants/site';
 
@@ -7,6 +8,43 @@ import { whatsappHref } from '@/constants/site';
  * tres partes. Es una demostración ilustrativa: sin datos ni resultados reales.
  * La coreografía es solo CSS (un ciclo de 10 s), así no depende de JavaScript.
  */
+// Cinta 3D: se carga con la primera interacción (mover el mouse, tocar, desplazar o usar
+// el teclado), así no compite con la carga ni con las mediciones de velocidad.
+// Sin WebGL o con «reducir movimiento» queda la cinta dibujada en SVG.
+function useCinta3D(lienzo: React.RefObject<HTMLCanvasElement | null>, marco: React.RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    const canvas = lienzo.current;
+    if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let cancelado = false;
+    let destruir: (() => void) | undefined;
+    const eventos = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'pointermove', 'keydown'] as const;
+    const iniciar = async () => {
+      eventos.forEach(e => window.removeEventListener(e, iniciar));
+      if (cancelado || destruir) return;
+      const prueba = document.createElement('canvas');
+      if (!prueba.getContext('webgl2') && !prueba.getContext('webgl')) return;
+      const [THREE, { RoomEnvironment }, { crearCinta }] = await Promise.all([
+        import('three'),
+        import('three/examples/jsm/environments/RoomEnvironment.js'),
+        import('@/lib/cinta-3d'),
+      ]);
+      if (cancelado) return;
+      try {
+        destruir = crearCinta(THREE, RoomEnvironment, canvas, { segmentos: window.innerWidth < 700 ? 160 : 260 }).destruir;
+        requestAnimationFrame(() => marco.current?.classList.add('is-3d'));
+      } catch {
+        // sin contexto 3D queda la cinta en SVG
+      }
+    };
+    eventos.forEach(e => window.addEventListener(e, iniciar, { passive: true, once: true }));
+    return () => {
+      cancelado = true;
+      eventos.forEach(e => window.removeEventListener(e, iniciar));
+      destruir?.();
+    };
+  }, []);
+}
+
 function Sistema() {
   return (
     <div className="sistema-marco" aria-hidden="true">
@@ -59,8 +97,12 @@ function Sistema() {
 }
 
 export function Hero() {
+  const lienzo = useRef<HTMLCanvasElement>(null);
+  const portada = useRef<HTMLElement>(null);
+  useCinta3D(lienzo, portada);
   return (
-    <section id="inicio" className="portada">
+    <section id="inicio" className="portada" ref={portada}>
+      <canvas className="portada-3d" ref={lienzo} aria-hidden="true" />
       <div className="contenedor portada-grid">
         <div className="portada-texto">
           <h1>Web, redes y WhatsApp en un mismo sistema</h1>

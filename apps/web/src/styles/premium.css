@@ -154,6 +154,12 @@ h1 em, h2 em { color: inherit; }
 @keyframes etiqueta { 0%, 37% { opacity: 0; } 39%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
 @keyframes escena-entra { from { opacity: 0; transform: translateY(2.4em); } }
 
+/* Cinta 3D de la portada: recorre el borde inferior y el lateral sin cruzar el título.
+   Cuando carga, reemplaza a la cinta en SVG de la escena. */
+.portada-3d { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
+.portada.is-3d .portada-3d { opacity: 1; }
+.portada.is-3d .sistema-cinta { opacity: 0; transition: opacity .8s ease; }
+
 /* ---------- Comunes ---------- */
 .seccion { position: relative; padding: clamp(88px, 10vw, 140px) 0; }
 .seccion h2 { margin: 0 0 20px; font-size: clamp(40px, 4.6vw, 70px); line-height: 1; font-weight: 600; letter-spacing: -.055em; text-wrap: balance; }
